@@ -2,6 +2,10 @@ export interface IShowAluno {
     id: number;
     nome: string;
     email: string;
+    matricula: string;
+    bilhete: string;
+    turma: string;
+    encarregado: string;
 }
 
 export interface ICreateAluno {

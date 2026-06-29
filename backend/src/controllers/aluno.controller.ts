@@ -17,7 +17,7 @@ export class AlunoController {
   async ListAlunos(request: FastifyRequest, reply: FastifyReply) {
     try {
       const [AlunoRows] = await this.fastify.mysql.query(
-        "SELECT id_alunos, nome_aluno, email_aluno FROM alunos",
+        "SELECT id_alunos, nome_aluno, email_aluno, matricula_aluno, bilhete_aluno, turma_aluno, encarregado_aluno FROM alunos",
       );
       return reply.send(AlunoRows as IShowAluno[]);
     } catch (err) {
@@ -44,6 +44,21 @@ export class AlunoController {
     } catch (err) {
       console.error("Erro ao criar aluno:", err);
       return reply.status(500).send({ error: "Erro ao criar aluno" });
+    }
+  }
+
+  // Verificar informações de um aluno
+  async VerifyAluno(request: FastifyRequest, reply: FastifyReply) {
+    try {
+
+      const { id } = request.params as {id: string}
+      const [result] = await this.fastify.mysql.query("SELECT id_alunos, nome_aluno, matricula_aluno, bilhete_aluno, turma_aluno, encarregado_aluno FROM alunos WHERE id_alunos = ?", [id])
+
+      return reply.send(result as IShowAluno)
+
+    } catch(err) {
+      console.error("Erro ao listar informações do aluno:", err);
+      return reply.status(500).send({ error: "Erro ao listar informações" });
     }
   }
 }

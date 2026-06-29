@@ -14,6 +14,7 @@ import {
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { RiParentFill } from "react-icons/ri";
 import { usuarioService } from "../services/usuario";
+import { Link } from "react-router-dom";
 
 
 export default function Registar() {
@@ -207,7 +208,7 @@ export default function Registar() {
         </form>
         
       </div>
-      <p className="register-login-button">Já tem uma conta? <a href="/login">Fazer Login</a></p>
+      <p className="register-login-button">Já tem uma conta? <a href="#/login">Fazer Login</a></p>
       
     </section>
   );

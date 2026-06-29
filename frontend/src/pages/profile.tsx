@@ -13,6 +13,10 @@ export default function ProfilePage() {
     }
   });
 
+  const extraFields = Object.entries(usuario ?? {}).filter(
+    ([key]) => !["id", "name", "email", "role"].includes(key),
+  );
+
   if (!usuario) {
     return (
       <div style={{ padding: "40px", textAlign: "center" }}>
@@ -109,6 +113,20 @@ export default function ProfilePage() {
             </p>
           </div>
         </div>
+
+        {extraFields.map(([key, value]) => (
+          <div key={key} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <Shield size={24} color="#e94560" />
+            <div>
+              <p style={{ margin: "0", color: "#666", fontSize: "0.9rem" }}>
+                {key.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())}
+              </p>
+              <p style={{ margin: "0", fontSize: "1.1rem", fontWeight: "bold" }}>
+                {String(value)}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import Login from "../pages/login";
 import Registar from "../pages/registar";
 import ProfilePage from "../pages/profile";
 import SettingsPage from "../pages/settings";
-import AdminPage from "../pages/admin";
+import AdminPage from "../modules/admin/admin";
 import AlunoPage from "../modules/aluno/pages/aluno";
 import ProfessorPage from "../pages/professor";
 import ResponsavelPage from "../pages/responsavel";

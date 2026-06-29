@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bell, BellRing, Calendar, GraduationCap, Info, LayoutDashboard } from "lucide-react";
-import { useState } from "react";
 
-export default function AlunoPage() {
+export default function AdminPage() {
   const [usuario] = useState(() => {
     try {
       const raw = localStorage.getItem("usuario");
@@ -23,16 +23,12 @@ export default function AlunoPage() {
       </div>
     );
   }
-
-  
-
   return (
     <section>
-
       <header>
         <div className="header-container">
           <div className="header-content">
-            <Link to="aluno" className="logo">
+            <Link to="admin" className="logo">
               <GraduationCap size={30} />
             </Link>
             <div className="header-logo">
@@ -88,16 +84,19 @@ export default function AlunoPage() {
               <h1>{usuario.email.charAt(0)}</h1>
             </div>
             <div className="profile-content">
-              <h1>{usuario.email}</h1>
               {extraFields.map(([key, value]) => (
                 <p key={key} style={{ marginTop: "8px" }}>
                   {key.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())}: {String(value)}
                 </p>
               ))}
-              
+              <h1>{usuario.email}</h1>
+              <p><h4>Nome: </h4>{usuario.nome}</p>
+              <p><h4>Função:</h4>{usuario.role}</p>
             </div>
           </div>
-          </div>
+
+          {/* Secção estatisticas da instituição */}
+        </div>
       </main>
     </section>
   );

@@ -8,6 +8,9 @@ export async function alunosRoutes(fastify: FastifyInstance) {
   // Rota para listar todos os alunos
   fastify.get("/api/alunos", alunoController.ListAlunos.bind(alunoController));
 
+  // Rota para verificar informações de aluno
+  fastify.get("/api/verify-aluno/:email", alunoController.VerifyAluno.bind(alunoController))
+
   // Rota para criar um novo aluno
   fastify.post(
     "/api/alunos",

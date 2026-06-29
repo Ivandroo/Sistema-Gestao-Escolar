@@ -3,6 +3,7 @@ import { Mail, Lock, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { authService } from "../services/auth";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -36,6 +37,7 @@ export default function Login() {
       setError(err?.message || "Falha ao fazer login");
     }
   };
+  
   return (
     <section className="register-container">
       <div className="register-content">
@@ -102,7 +104,7 @@ export default function Login() {
       </div>
 
       <p className="register-login-button">
-        Ainda não tem uma conta? <a href="/registrar"> Fazer Cadastro </a>
+        Ainda não tem uma conta? <a href="#/registar"> Fazer Cadastro </a>
       </p>
     </section>
   );

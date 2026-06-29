@@ -1,15 +1,11 @@
-import { AuthLogin } from "../types/auth.type";
+import { AuthLogin, AuthUser } from "../types/auth.type";
 
 const API_URL = "http://localhost:3001/api";
 
 export interface AuthResponse {
   message: string;
   token: string;
-  usuario: {
-    id: number;
-    email: string;
-    role: string;
-  };
+  usuario: AuthUser;
 }
 
 export const authService = {
