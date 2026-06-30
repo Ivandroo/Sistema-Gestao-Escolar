@@ -4,11 +4,11 @@ main {
     width: 100%;
     min-height: 100vh;
     gap: 1.5rem;
+    background: #f8fafc;
 }
 
 .side-bar-menu {
     min-width: 200px;
-    position: sticky;
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
@@ -61,6 +61,8 @@ main {
 
 /// MAIN ///
 
+
+// { Parte do perfil de cima }
 .main-content {
     width: 100%;
 }
@@ -102,4 +104,65 @@ main {
     gap: 6px;
     font-size: 11pt;
     color: #99a1af;
+}
+
+// { Parte das estatísticas do admin }
+
+.estatistica-div {
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.estatistica-box {
+    padding: 1.2rem 1.4rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.05);
+}
+
+.estatistica-box h3 {
+    font-size: 9pt;
+    color: #99a1af;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: .4rem;
+}
+
+.estatistica-box span {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.estatistica-box h2 {
+    font-size: 2.3rem;
+    color: #0f172b;
+}
+
+.estatistica-icon {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+// cor de cada icone
+.icon-1 {
+    background: #fff1f2;
+    color: oklch(58.6% 0.253 17.585);
+}
+.icon-2 {
+    background: #ecfdf5;
+    color: oklch(59.6% 0.145 163.225);
+}
+.icon-3 {
+    background: #eff6ff;
+    color: #155dfc;
+}
+.icon-4 {
+    background: oklch(98.7% 0.022 95.277);
+    color: oklch(66.6% 0.179 58.318);
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Bell, BellRing, Calendar, GraduationCap, Info, LayoutDashboard } from "lucide-react";
+import { Award, Bell, BellRing, Calendar, CreativeCommons, CreditCard, GraduationCap, Info, LayoutDashboard, User, UserCheck } from "lucide-react";
 
 export default function AdminPage() {
   const [usuario] = useState(() => {
@@ -84,11 +84,6 @@ export default function AdminPage() {
               <h1>{usuario.email.charAt(0)}</h1>
             </div>
             <div className="profile-content">
-              {extraFields.map(([key, value]) => (
-                <p key={key} style={{ marginTop: "8px" }}>
-                  {key.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())}: {String(value)}
-                </p>
-              ))}
               <h1>{usuario.email}</h1>
               <p><h4>Nome: </h4>{usuario.nome}</p>
               <p><h4>Função:</h4>{usuario.role}</p>
@@ -96,6 +91,67 @@ export default function AdminPage() {
           </div>
 
           {/* Secção estatisticas da instituição */}
+          <div className="estatistica-div">
+            <div className="estatistica-box">
+              <h3>Total de estudantes</h3>
+              <span>
+                <h2>5</h2>
+                <div className="estatistica-icon icon-1">
+                  <User size={28}/>
+                </div>
+                
+              </span>
+            </div>
+            <div className="estatistica-box">
+              <h3>Total de Docentes</h3>
+              <span>
+                <h2>5</h2>
+                <div className="estatistica-icon icon-2">
+                  <UserCheck size={25} />
+                </div>
+              </span>
+            </div>
+            <div className="estatistica-box">
+              <h3>Total de Turmas</h3>
+              <span>
+                <h2>5</h2>
+                <div className="estatistica-icon icon-3">
+                  <Award size={28} />
+                </div>
+              </span>
+            </div>
+            <div className="estatistica-box">
+              <h3>Total de Cursos</h3>
+              <span>
+                <h2>5</h2>
+                <div className="estatistica-icon icon-4">
+                  <CreditCard size={30} />
+                </div>
+
+              </span>
+            </div>
+          </div>
+
+          {/* Secção de turmas administrador*/}
+          <div className="turmas-conteiner">
+            <div className="turmas-title">
+              <span>
+                <h2> Gestão de turmas ( Classes ) </h2>
+                <p> Crie e configure as turmas pedagógicas de nível escolar</p>
+              </span>
+              <button>
+                + Nova turma
+              </button>
+            </div>
+            <div className="turmas-content">
+              <div className="turmas-box">
+                <span className="turmas-badge"> Período: Manhã </span>
+                <h1 className="turmas-nome"> Turma: TI120A</h1>
+                <span className="turmas-info"> Curso: <h4>Informática</h4></span>
+                <span className="turmas-info"> Diretor: <h4>Aniceto Ferreira</h4></span>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </section>
