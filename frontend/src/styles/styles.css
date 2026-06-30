@@ -1049,14 +1049,14 @@ main {
   text-transform: uppercase;
 }
 
-.turmas-inputs input {
+.turmas-inputs input, .turmas-inputs select {
   width: 100%;
   font-size: 12px;
   border: 1px solid #d1d5dc;
   border-radius: 4px;
   padding: 0.6rem 0.8rem;
 }
-.turmas-inputs input:focus {
+.turmas-inputs input:focus, .turmas-inputs select:focus {
   border: 1px solid oklch(62.3% 0.214 259.815deg);
 }
 

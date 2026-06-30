@@ -206,7 +206,7 @@ main {
     font-weight: 600;
     text-transform: uppercase;
 }
-.turmas-inputs input {
+.turmas-inputs input, .turmas-inputs select {
     width: 100%;
     font-size: 12px;
     border: 1px solid #d1d5dc;

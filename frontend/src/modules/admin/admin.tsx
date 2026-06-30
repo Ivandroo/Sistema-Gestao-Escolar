@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Award, Bell, BellRing, Calendar, CreativeCommons, CreditCard, GraduationCap, Info, LayoutDashboard, Plus, User, UserCheck } from "lucide-react";
 
 export default function AdminPage() {
+
+  // Função para autenticação do usuário
   const [usuario] = useState(() => {
     try {
       const raw = localStorage.getItem("usuario");
@@ -23,6 +25,15 @@ export default function AdminPage() {
       </div>
     );
   }
+
+  // Pegar o ano atual e o próximo
+  const Ano = new Date()
+  const AnoAtual = Ano.getFullYear()
+  const AnoAsseguir = AnoAtual + 1
+
+  // abrir o formulário para add turma
+  const [showFormTurma, setShowFormTurma] = useState(false)
+
   return (
     <section>
       <header>
@@ -139,35 +150,42 @@ export default function AdminPage() {
                 <h2> Gestão de turmas (Classes) </h2>
                 <p> Crie e configure as turmas pedagógicas de nível escolar</p>
               </span>
-              <button>
+              <button onClick={() => setShowFormTurma(!showFormTurma)}>
                 <Plus size={15} /> Nova turma
               </button>
             </div>
 
             {/* Formulario para adicionar turma*/}
-            <div className="turmas-adicionar">
-              <p>Adicionar nova turma de estudantes</p>
-              <form action="" className="turmas-formulario">
-                <div className="turmas-input-boxes">
-                  <div className="turmas-inputs">
-                    <label htmlFor="">Nome da turma *</label>
-                    <input type="text" placeholder="Ex: CG120A"/>
+            {showFormTurma && ( 
+              <div className="turmas-adicionar">
+                <p>Adicionar nova turma de estudantes</p>
+                <form action="" className="turmas-formulario">
+                  <div className="turmas-input-boxes">
+                    <div className="turmas-inputs">
+                      <label htmlFor="">Nome da turma *</label>
+                      <input type="text" placeholder="Ex: CG120A" required/>
+                    </div>
+                    <div className="turmas-inputs">
+                      <label htmlFor="">Ano Lectivo *</label>
+                      
+                      <select name="" id="" required>
+                        <option value="">Selecione o ano</option>
+                        <option value={AnoAtual}>{AnoAtual}</option>
+                        <option value={AnoAsseguir}>{AnoAsseguir}</option>
+                      </select>
+                    </div>
+                    <div className="turmas-inputs">
+                      <label htmlFor="">Curso da turma *</label>
+                      <input type="text" required />
+                    </div>
                   </div>
-                  <div className="turmas-inputs">
-                    <label htmlFor="">Ano Lectivo *</label>
-                    <input type="text" />
-                  </div>
-                  <div className="turmas-inputs">
-                    <label htmlFor="">Curso da turma *</label>
-                    <input type="text" />
-                  </div>
-                </div>
-                <fieldset>
-                  <button className="button-form bt-1"> Cancelar </button>
-                  <button className="button-form bt-2"> Salvar </button>
-                </fieldset>
-              </form>
-            </div>
+                  <fieldset>
+                    <button onClick={() => setShowFormTurma(false)} className="button-form bt-1"> Cancelar </button>
+                    <button className="button-form bt-2"> Salvar </button>
+                  </fieldset>
+                </form>
+              </div>
+            )}
 
             {/*Lista de turmas existentes*/}
             <div className="turmas-content">
