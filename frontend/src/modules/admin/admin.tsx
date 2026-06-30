@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Award, Bell, BellRing, Calendar, CreativeCommons, CreditCard, GraduationCap, Info, LayoutDashboard, User, UserCheck } from "lucide-react";
+import { Award, Bell, BellRing, Calendar, CreativeCommons, CreditCard, GraduationCap, Info, LayoutDashboard, Plus, User, UserCheck } from "lucide-react";
 
 export default function AdminPage() {
   const [usuario] = useState(() => {
@@ -136,13 +136,40 @@ export default function AdminPage() {
           <div className="turmas-conteiner">
             <div className="turmas-title">
               <span>
-                <h2> Gestão de turmas ( Classes ) </h2>
+                <h2> Gestão de turmas (Classes) </h2>
                 <p> Crie e configure as turmas pedagógicas de nível escolar</p>
               </span>
               <button>
-                + Nova turma
+                <Plus size={15} /> Nova turma
               </button>
             </div>
+
+            {/* Formulario para adicionar turma*/}
+            <div className="turmas-adicionar">
+              <p>Adicionar nova turma de estudantes</p>
+              <form action="" className="turmas-formulario">
+                <div className="turmas-input-boxes">
+                  <div className="turmas-inputs">
+                    <label htmlFor="">Nome da turma *</label>
+                    <input type="text" placeholder="Ex: CG120A"/>
+                  </div>
+                  <div className="turmas-inputs">
+                    <label htmlFor="">Ano Lectivo *</label>
+                    <input type="text" />
+                  </div>
+                  <div className="turmas-inputs">
+                    <label htmlFor="">Curso da turma *</label>
+                    <input type="text" />
+                  </div>
+                </div>
+                <fieldset>
+                  <button className="button-form bt-1"> Cancelar </button>
+                  <button className="button-form bt-2"> Salvar </button>
+                </fieldset>
+              </form>
+            </div>
+
+            {/*Lista de turmas existentes*/}
             <div className="turmas-content">
               <div className="turmas-box">
                 <span className="turmas-badge"> Período: Manhã </span>

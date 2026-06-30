@@ -9,6 +9,7 @@ main {
 
 .side-bar-menu {
     min-width: 200px;
+    height: fit-content;
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
@@ -165,4 +166,160 @@ main {
 .icon-4 {
     background: oklch(98.7% 0.022 95.277);
     color: oklch(66.6% 0.179 58.318);
+}
+
+//// { Parte das turmas } 
+
+// Adicionar turmas
+.turmas-adicionar {
+    display: block;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    padding: 1.2rem 1.4rem;
+}
+.turmas-adicionar p {
+    font-size: 12px;
+    color: #6a7282;
+    font-weight: 600;
+    margin-bottom: .6rem;
+}
+.turmas-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.turmas-input-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+.turmas-inputs {
+    display: flex;
+    flex-direction: column;
+}
+.turmas-inputs label {
+    font-size: 10px;
+    color: #45556c;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.turmas-inputs input {
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid #d1d5dc;
+    border-radius: 4px;
+    padding: .6rem .8rem;
+    &:focus {
+        border: 1px solid oklch(62.3% 0.214 259.815);
+    }
+}
+.turmas-formulario fieldset {
+    border: none;
+    display: flex;
+    padding: .5rem 0;
+    gap: .8rem;
+    justify-content: end;
+}
+.button-form {
+    border-radius: 4px;
+    border: none;
+    padding: .4rem .8rem;
+}
+.bt-1 {
+    font-weight: 600;
+    color: #45556c;
+    background: #fff;
+    border: 1px solid #d1d5dc;
+}
+.bt-2 {
+    font-weight: 600;
+    color: #fff;
+    background: #155dfc;
+}
+
+
+// Lista de turmas
+.turmas-conteiner {
+    display: block;
+    padding: 1.2rem 1.4rem;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.turmas-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .8rem;
+}
+
+.turmas-title h2 {
+    color: #0f172b;
+    font-size: 1.2rem;
+}
+
+.turmas-title p {
+    color: #6a7282;
+    font-size: .85rem;
+}
+
+.turmas-title button {
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    background: #101828;
+    cursor: pointer;
+}
+
+.turmas-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.turmas-box {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all .2s;
+
+    &:hover {
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        border: 1px solid oklch(88.2% 0.059 254.128);
+    }
+}
+
+.turmas-badge {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #eff6ff;
+    color: #1447e6;
+    padding: .4rem .8rem;
+    border-radius: 4px;
+}
+
+.turmas-nome {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: .4rem;
+    color: #101828;
+}
+
+.turmas-info {
+    display: flex;
+    font-size: .875rem;
+    color: #45556c;
+    justify-content: space-between;
 }
